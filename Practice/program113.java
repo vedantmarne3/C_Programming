@@ -1,19 +1,47 @@
 import java.util.*;
 
-class  program139
+class  program143
 {
+    public static int Summation(int Arr[])
+    {
+        int iSum = 0;
+
+        for(int iCnt = 0; iCnt < Arr.length; iCnt++)
+        {
+            iSum = iSum + Arr[iCnt];
+        }
+
+        return  iSum;
+    }
     public static void main(String[] A) 
     {
         Scanner sobj = new Scanner(System.in);
+        int iCnt = 0;
 
-        int Arr[] = {10,20,30,40,};
 
-        System.out.println(Arr.length);
+       System.out.println("Enter the No. of Elements : ");
+       int iLength = sobj.nextInt();
 
-        for(int iCnt = 0;iCnt < Arr.length; iCnt++)
+        int Brr[] = new int[iLength];
+
+        System.out.println("Enter the Element : ");
+        for(iCnt = 0; iCnt < Brr.length; iCnt++)
         {
-            System.out.println(Arr[iCnt]);
+            Brr[iCnt] = sobj.nextInt();
         }
-        
+
+        System.out.println("Elements of Array are : ");
+        for(iCnt = 0; iCnt < Brr.length; iCnt++)
+        {
+            System.out.println(Brr[iCnt]);
+        }
+
+        int iRet = Summation(Brr);
+
+        System.out.println("Summation is : " + iRet);
+
+        Brr = null;
+
+        System.gc();
     }
 }
