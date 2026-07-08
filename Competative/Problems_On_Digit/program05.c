@@ -1,10 +1,10 @@
 #include<stdio.h>
 
-int CountEven(int iNo)
+int CountDiff(int iNo)
 {
     int iDigit = 0;
     
-    int iCnt = 0;
+    int iSumEven = 0, iSumOdd = 0, iDiff = 0;
 
     if(iNo < 0)
     {
@@ -17,12 +17,18 @@ int CountEven(int iNo)
 
         if(iDigit % 2 == 0)
         {
-            iCnt++;
+            iSumEven = iSumEven + iDigit;
+        }
+        else
+        {
+            iSumOdd = iSumOdd + iDigit;
         }
         iNo = iNo/10;
     }
 
-    return iCnt;
+    iDiff = iSumEven - iSumOdd;
+
+    return iDiff;
 }
 int main()
 {
@@ -32,9 +38,9 @@ int main()
     printf("Enter a Number : ");
     scanf("%d",&iValue);
 
-    iRet = CountEven(iValue);
+    iRet = CountDiff(iValue);
 
-    printf("Number of Even number is : %d",iRet);
+    printf("Number of Odd number is : %d",iRet);
     
     return 0;
 }

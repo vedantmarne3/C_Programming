@@ -1,6 +1,6 @@
 #include<stdio.h>
 
-int CountEven(int iNo)
+int CountOdd(int iNo)
 {
     int iDigit = 0;
     
@@ -15,7 +15,7 @@ int CountEven(int iNo)
     {
         iDigit = iNo % 10;
 
-        if(iDigit % 2 == 0)
+        if(iDigit % 2 != 0)
         {
             iCnt++;
         }
@@ -32,9 +32,9 @@ int main()
     printf("Enter a Number : ");
     scanf("%d",&iValue);
 
-    iRet = CountEven(iValue);
+    iRet = CountOdd(iValue);
 
-    printf("Number of Even number is : %d",iRet);
+    printf("Number of Odd number is : %d",iRet);
     
     return 0;
 }

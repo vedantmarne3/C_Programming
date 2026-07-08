@@ -1,10 +1,10 @@
 #include<stdio.h>
 
-int CountEven(int iNo)
+int MultNumber(int iNo)
 {
     int iDigit = 0;
     
-    int iCnt = 0;
+    int iMult = 1;
 
     if(iNo < 0)
     {
@@ -15,14 +15,12 @@ int CountEven(int iNo)
     {
         iDigit = iNo % 10;
 
-        if(iDigit % 2 == 0)
-        {
-            iCnt++;
-        }
+        iMult = iMult * iDigit;
+
         iNo = iNo/10;
     }
 
-    return iCnt;
+    return iMult;
 }
 int main()
 {
@@ -32,9 +30,9 @@ int main()
     printf("Enter a Number : ");
     scanf("%d",&iValue);
 
-    iRet = CountEven(iValue);
+    iRet = MultNumber(iValue);
 
-    printf("Number of Even number is : %d",iRet);
+    printf("Multiplication of number is : %d",iRet);
     
     return 0;
 }

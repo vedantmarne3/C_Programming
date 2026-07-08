@@ -1,10 +1,10 @@
 #include<stdio.h>
 
-int CountEven(int iNo)
+int CountRange(int iNo)
 {
     int iDigit = 0;
     
-    int iCnt = 0;
+    int iCnt = 0, iCount = 0;
 
     if(iNo < 0)
     {
@@ -15,14 +15,14 @@ int CountEven(int iNo)
     {
         iDigit = iNo % 10;
 
-        if(iDigit % 2 == 0)
+        if(iDigit > 3 && iDigit < 7)
         {
-            iCnt++;
+            iCount++;
         }
         iNo = iNo/10;
     }
 
-    return iCnt;
+    return iCount;
 }
 int main()
 {
@@ -32,9 +32,9 @@ int main()
     printf("Enter a Number : ");
     scanf("%d",&iValue);
 
-    iRet = CountEven(iValue);
+    iRet = CountRange(iValue);
 
-    printf("Number of Even number is : %d",iRet);
+    printf("%d",iRet);
     
     return 0;
 }
