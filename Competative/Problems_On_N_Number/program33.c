@@ -1,6 +1,6 @@
 #include<stdio.h>
 
-int Factorial(int iNo)
+int EvenFactorial(int iNo)
 {
     int iCnt = 0;
     int iFact = 1;
@@ -12,24 +12,26 @@ int Factorial(int iNo)
 
     for(iCnt = 1; iCnt <= iNo; iCnt++)
     {
-        iFact = iFact * iCnt;
+        if(iCnt % 2 == 0)
+        {
+            iFact = iFact * iCnt;
+        }
     }
-    
-    return iFact;
 
+    return iFact;
+    
 }
 
 int main()
 {
-    int iValue = 0;
-    int iRet = 0;
+    int iValue = 0, iRet = 0;
 
     printf("Enter Number : \n");
     scanf("%d",&iValue);
 
-    iRet = Factorial(iValue);
+    iRet = EvenFactorial(iValue);
 
-    printf("Factorial is : %d",iRet);
+    printf("Even Factorial of Number is : %d",iRet);
 
     return 0;
 }

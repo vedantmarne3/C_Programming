@@ -1,29 +1,37 @@
 #include<stdio.h>
 
-void Table(int iNo)
+int OddFactorial(int iNo)
 {
     int iCnt = 0;
- 
+    int iFact = 1;
+
     if(iNo < 0)
     {
         iNo = -iNo;
     }
 
-    for(iCnt = 1; iCnt <= 10; iCnt++)
+    for(iCnt = 1; iCnt <= iNo; iCnt++)
     {
-        printf("%d\t",iNo * iCnt);
+        if(iCnt % 2 != 0)
+        {
+            iFact = iFact * iCnt;
+        }
     }
+
+    return iFact;
     
 }
 
 int main()
 {
-    int iValue = 0;
+    int iValue = 0, iRet = 0;
 
     printf("Enter Number : \n");
     scanf("%d",&iValue);
 
-    Table(iValue);
+    iRet = OddFactorial(iValue);
+
+    printf("Odd Factorial of Number is : %d",iRet);
 
     return 0;
 }

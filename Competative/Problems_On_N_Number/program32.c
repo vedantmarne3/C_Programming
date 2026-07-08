@@ -1,70 +1,25 @@
 #include<stdio.h>
 
-void Display(int iNo)
+int DollerToINR(int iNo)
 {
+    int iCalc = 0;
 
-    if(iNo < 0)
-    {
-        iNo = -iNo;
-    }
+    iCalc = iNo * 70;
 
-    if(iNo == 0)
-    {
-        printf("Zero\n");
-    }
-    else if (iNo == 1)
-    {
-        printf("One\n");
-    }
-    else if (iNo == 2)
-    {
-        printf("Two\n");
-    }
-    else if (iNo == 3)
-    {
-        printf("Three\n");
-    }
-    else if (iNo == 4)
-    {
-        printf("Four\n");
-    }
-    else if (iNo == 5)
-    {
-        printf("Five\n");
-    }
-    else if (iNo == 6)
-    {
-        printf("Six\n");
-    }
-    else if (iNo == 7)
-    {
-        printf("Seven\n");
-    }
-    else if (iNo == 8)
-    {
-        printf("Eight\n");
-    }
-    else if (iNo == 9)
-    {
-        printf("Nine\n");
-    }
-    else
-    {
-        printf("Invalid Number!!!\n");
-    }
+    return iCalc;
     
-    
-
 }
 
 int main()
 {
-    int iValue = 0;
+    int iValue = 0, iRet = 0;
 
-    printf("Enter Number : \n");
+    printf("Enter Number  of USD : \n");
     scanf("%d",&iValue);
 
-    Display(iValue);
+    iRet = DollerToINR(iValue);
+
+    printf("Value in INR is : %d",iRet);
 
     return 0;
 }
